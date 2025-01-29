@@ -7,6 +7,8 @@
     </head>
     <body>
         <?php
+        ini_set('display_errors', 1);
+
         $title = $_POST['title'];
         $last_name = $_POST['last_name'];
         $response = $_POST['response'];
