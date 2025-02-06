@@ -13,9 +13,11 @@
 
         $name = $first_name . " " . $last_name;
 
-        $html_post = htmlentities($_POST['posting']);
-        $strip_post = strip_tags($_POST['posting']);
+        print "<div>Thank you, $name, for your posting: <p>Original: $posting</p></div>";
 
-        print "<div>Thank you, $name, for your posting: <p>Original: $posting</p><p>Entity: $html_post</p><p>Stripped: $strip_post</p></div>";
+        $name = urlencode($name);
+        $email = urlencode($_POST['email']);
+
+        print "<p>Click <a href=\"thanks.php?name=$name&email=$email\">here</a> to continue.</p>";
         ?>
     </body>
