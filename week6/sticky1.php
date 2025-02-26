@@ -7,9 +7,9 @@
     </head>
     <body>
         <?php
-        function make_text_input($name, $label) {
+        function make_text_input($name, $label, $size=20) {
             print '<p><label>'  . $label . ': ';
-            print '<input type="text" name="' . $name . '" size="20"';
+            print '<input type="text" name="' . $name . '" size="' . $size . '"';
 
             if (isset($_POST[$name])) {
                 print ' value="' . htmlspecialchars($_POST[$name]) . '"';
@@ -21,7 +21,7 @@
         print '<form action="" method="post">';
         make_text_input('first_name', 'First Name');
         make_text_input('last_name', 'Last Name');
-        make_text_input('email', 'Email Address');
+        make_text_input('email', 'Email Address', 30);
         print '<input type="submit" name="submit" value="Register!"></form>';
         ?>
     </body>
